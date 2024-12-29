@@ -65,7 +65,7 @@ public class MyFirstApp {
 		// the array[0] command is used to access the first element in an array
 		//
 		//QUESTION 5
-		//
+		// this loop cycles through the names array and adds the length of each name to a new int array
 		int[] nameLengths = new int[names.length];
 		for (int i = 0; i < names.length; i++) {
 			nameLengths[i] = names[i].length();
@@ -73,7 +73,7 @@ public class MyFirstApp {
 		System.out.println(Arrays.toString(nameLengths));
 		//
 		//QUESTION 6
-		//
+		// this loop cycles over the names length array and sums all the elements
 		int sumLength = 0;
 		for (int length : nameLengths) {
 			sumLength = sumLength + length;
@@ -125,14 +125,14 @@ public class MyFirstApp {
 	// then in the main method the makeString method is called and the concatenated string is printed
 	//
 	//QUESTION 8 method
-	//
+	// this method concatenates to strings and returns the one concatenated string 
 	public static String makeName(String firstName, String lastName) {
 		String fullName = firstName + " " + lastName;
 		return fullName;
 	}
 	//
 	//QUESTION 9 method
-	//
+	// this method asks whether the sum of all the elements in an int array is greater than 100
 	public static Boolean isGreaterThan100(int[] numbers) {
 		int sum = 0;
 		for (int number : numbers) {
@@ -142,7 +142,7 @@ public class MyFirstApp {
 	}
 	//
 	//QUESTION 10 method
-	//
+	// this method finds the average of all the elements in a douhble array
 	public static double findAverage(double[] numbs) {
 		double sum = 0;
 		for (int i = 0; i < numbs.length; i++) {
@@ -153,8 +153,9 @@ public class MyFirstApp {
 	}
 	//
 	//QUESTION 11 method
-	//
+	// the method asks whether the average of the elements in the first double array is greater than the average of the second
 	public static Boolean isFirstAveMore(double[] double1, double[] double2) {
+	// first the sum of each double array is calculated	
 		double sum1 = 0;
 		double sum2 = 0;
 		for (double dub1 : double1) {
@@ -163,35 +164,37 @@ public class MyFirstApp {
 		for (double dub2 : double2) {
 			sum2 = sum2 + dub2;
 		}
-
+	// then the average of each array is calculated using the length property of the arrays	
 		double ave1 = sum1 / double1.length;
 		double ave2 = sum2 / double2.length;
+	// finally the boolean return checks if the first average is greater than the second	
 		return ave1 > ave2;
 	}
 	//
 	//QUESTION 12 method
-	//
+	// this method checks if both statements are true
 	public static Boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
 		return (isHotOutside && moneyInPocket > 10.50);
 	}
 	//
 	//QUESTION 13 method
-	//the method called shout below will take a string userWord, repeat it n times with exclamation!
-	//then it capitalizes the characters at indexes divisible by 3
-	//the method will return the new string with intermittent capitalized letters
+	// the method called shout below will take a string userWord, and repeat it n times with exclamation!
 	public static String shoutOut(String userWord, int s) {
 		String shoutWord = "";
 		for (int i = 0; i < s; i++) {
 			shoutWord = shoutWord + userWord + "!";
 			}	
+	// then a new empty string is made where each character at indexes divisible by 3
 		String word = "";
 		for (int index = 0; index < shoutWord.length(); index++) {
 			if (index % 3 == 0) {
 			word += Character.toUpperCase(shoutWord.charAt(index));
+	// characters at all other indexes are left in their input form	
 			} else {
 				word += shoutWord.charAt(index);
 			}
 		}
+	// the method will return the new string with intermittent capitalized letters
 		return word;
 	}
 }
